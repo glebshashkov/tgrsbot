@@ -214,7 +214,7 @@ def order(message):
 
 
 
-# @bot.message_handler(commands=['order'])
+# @bot.message_handler(commands=['order']))
 # def start(message):
 #     markup = types.InlineKeyboardMarkup())
 #     markup.add(types.InlineKeyboardButton('Да', callback_data='order'))
