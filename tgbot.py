@@ -149,40 +149,68 @@ def order(message):
             btn3 = types.KeyboardButton('Jordan')
             btn4 = types.KeyboardButton('New Balance')
             btn5 = types.KeyboardButton('GGDB')
+            btn6 = types.KeyboardButton('Converse')
+            btn7 = types.KeyboardButton('Как измерить стопу?')
             back = types.KeyboardButton('🔙Назад')
             markup.add(btn1, btn2, btn3)
-            markup.add(btn4, btn5, back)
+            markup.add(btn4, btn5, btn6)
+            markup.add(btn7, back)
             bot.send_message(message.chat.id, 'Размерная сетка какого бренда тебе интересна?', reply_markup=markup)
 
         elif message.text == 'Adidas':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            bot.send_message(message.chat.id, 'Отправил размерую сетку Adidas, помни что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
+            adidasSizng = open('adidas_sizing.jpeg', 'rb')
+            bot.send_photo(message.chat.id, adidasSizng)
+            bot.send_message(message.chat.id, 'Отправил размерую сетку Adidas, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
 
         elif message.text == 'Nike':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            bot.send_message(message.chat.id, 'Отправил размерую сетку Nike, помни что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
+            nikeSizng = open('nike_sizing.jpeg', 'rb')
+            bot.send_photo(message.chat.id, nikeSizng)
+            bot.send_message(message.chat.id, 'Отправил размерую сетку Nike, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
 
         elif message.text == 'Jordan':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            bot.send_message(message.chat.id, 'Отправил размерую сетку Jordan, помни что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
+            jordanSizng = open('jordan_sizing.jpeg', 'rb')
+            bot.send_photo(message.chat.id, jordanSizng)
+            bot.send_message(message.chat.id, 'Отправил размерую сетку Jordan, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
 
         elif message.text == 'New Balance':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            bot.send_message(message.chat.id, 'Отправил размерую сетку New Balance, помни что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
+            nbSizng = open('nb_sizing.jpeg', 'rb')
+            bot.send_photo(message.chat.id, nbSizng)
+            bot.send_message(message.chat.id, 'Отправил размерую сетку New Balance, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
+
+        elif message.text == 'Converse':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('converse_sizing.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Отправил размерую сетку Converse, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
 
         elif message.text == 'GGDB':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            bot.send_message(message.chat.id, 'Отправил размерую сетку GGDB, помни что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
+            bot.send_message(message.chat.id, 'Отправил размерую сетку GGDB, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
+            bot.send_message(message.chat.id, 'https://iriani.ru/page553559.html' , reply_markup=markup)
+
+        elif message.text == 'Как измерить стопу?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            feetSizng = open('feet_sizing.png', 'rb')
+            bot.send_photo(message.chat.id, feetSizng)
+            bot.send_message(message.chat.id, 'Отправил ссылку на подробный гайд как измерить стопу, пользуйся!' , reply_markup=markup)
 
         elif message.text == 'Скачать каталог🗂':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
