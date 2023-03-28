@@ -57,11 +57,11 @@ def order(message):
             btn2 = types.KeyboardButton('Газпромбанк')
             btn3 = types.KeyboardButton('ВТБ')
             btn4 = types.KeyboardButton('Райффайзен банк')
-            btn5 = types.KeyboardButton('Тинькофф')
             back = types.KeyboardButton('🔙Назад')
-            markup.add(btn1, btn2, btn3)
-            markup.add(btn4, btn5, back)
-            bot.send_message(message.chat.id, 'Если готов(а) оплачивать, выбери банк на который удобно совершить платёж.', reply_markup=markup)
+            markup.add(btn1, btn2)
+            markup.add(btn3, btn4)
+            markup.add(back)
+            bot.send_message(message.chat.id, 'Если готов(а) оплачивать, выбери банк на который удобно совершить платёж, после оплаты жми оплатил(а).', reply_markup=markup)
 
         elif message.text == 'Нет✖️':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
@@ -105,21 +105,12 @@ def order(message):
             bot.send_message(message.chat.id, 'Оплата по номеру телефона: 89778480013', reply_markup=markup)
             bot.send_message(message.chat.id, 'Оплата по номеру карты: 5379653046439996', reply_markup=markup)
             bot.send_message(message.chat.id, 'Получатель Глеб Михайлович Ш.', reply_markup=markup)
-
-        elif message.text == 'Тинькофф':
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
-            back = types.KeyboardButton('🔙Назад')
-            paid = types.KeyboardButton('Оплатил(а)')
-            markup.add(paid, back)
-            bot.send_message(message.chat.id, 'Оплата по номеру телефона: 89264232169', reply_markup=markup)
-            bot.send_message(message.chat.id, 'Оплата по номеру карты: 5536913985255492', reply_markup=markup)
-            bot.send_message(message.chat.id, 'Получатель Наталья Андреевна Б.', reply_markup=markup)
         
         elif message.text == 'Оплатил(а)':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            bot.send_message(message.chat.id, f'Спасибо за заказ {message.from_user.first_name}! В течении 24-х часов мы пришлём тебе скриншот об успешном заказе!', reply_markup=markup)
+            bot.send_message(message.chat.id, f'Спасибо за заказ {message.from_user.first_name}! Пришли скриншот с успешной транзакции в личные сообщения @glebshashkov и течении 24-х часов мы пришлём тебе скриншот об успешном заказе!', reply_markup=markup)
         
         elif message.text == 'Посчитать стоимость💴':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
@@ -210,7 +201,137 @@ def order(message):
             markup.add(back)
             feetSizng = open('feet_sizing.png', 'rb')
             bot.send_photo(message.chat.id, feetSizng)
-            bot.send_message(message.chat.id, 'Отправил ссылку на подробный гайд как измерить стопу, пользуйся!' , reply_markup=markup)
+            bot.send_message(message.chat.id, 'Отправил подробный гайд как измерить стопу, пользуйся!' , reply_markup=markup)
+
+        elif message.text == 'FAQ❓':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            btn1 = types.KeyboardButton('Как оформить заказ?')
+            btn2 = types.KeyboardButton('Как я получу заказ?')
+            btn3 = types.KeyboardButton('Как долго идёт доставка?')
+            btn4 = types.KeyboardButton('Какие товары можем заказать?')
+            btn5 = types.KeyboardButton('Какие бренды можем заказать?')
+            btn6 = types.KeyboardButton('От куда мы заказываем?')
+            btn7 = types.KeyboardButton('Есть-ли у вас возвраты?')
+            btn8 = types.KeyboardButton('У вас точно оригинал?')
+            btn9 = types.KeyboardButton('Какой у меня размер?')
+            btn10 = types.KeyboardButton('Почему разные цены на разные размеры?')
+            btn11 = types.KeyboardButton('Почему выгодно покупать у нас?')
+            btn12 = types.KeyboardButton('Вы заказывете с Китая? Там же только подделки?')
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(btn1, btn2, btn3)
+            markup.add(btn4, btn5, btn6)
+            markup.add(btn7, btn8, btn9)
+            markup.add(btn10, btn11)
+            markup.add(btn12, back)
+            bot.send_message(message.chat.id, 'Выбери интересующий тебя вопрос, если его нет в списке жми назад и выбери "Поддержка"', reply_markup=markup)
+
+        elif message.text == 'Как оформить заказ?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('make_order.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Как я получу заказ?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('recieve_order.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Как долго идёт доставка?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('delivery.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Какие товары можем заказать?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('items.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Какие бренды можем заказать?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('brands.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'От куда мы заказываем?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('from_where.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Есть-ли у вас возвраты?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('returns.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'У вас точно оригинал?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('original.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Какой у меня размер?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('my_size.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Почему разные цены на разные размеры?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('diff_prices.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Почему выгодно покупать у нас?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('why_us.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Вы заказывете с Китая? Там же только подделки?':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            converseSizng = open('china.png', 'rb')
+            bot.send_photo(message.chat.id, converseSizng)
+            bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
+
+        elif message.text == 'Другой вопрос⁉️':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            bot.send_message(message.chat.id, 'Задай свой вопрос @glebshashkov', reply_markup=markup)
+
+        elif message.text == 'Поддержка💬':
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
+            back = types.KeyboardButton('🔙Назад')
+            markup.add(back)
+            bot.send_message(message.chat.id, 'Задай свой вопрос @glebshashkov', reply_markup=markup)
 
         elif message.text == 'Скачать каталог🗂':
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
