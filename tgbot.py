@@ -2,6 +2,7 @@ import telebot
 from telebot import types
 
 bot = telebot.TeleBot('5876097484:AAEE_QLwtEuz9y3evezKatSwlZkTeGh4WjQ')
+# bot = telebot.TeleBot(token=os.environ.get('TOKEN')) 
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -152,7 +153,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            adidasSizng = open('adidas_sizing.jpeg', 'rb')
+            adidasSizng = open('img/adidas_sizing.jpeg', 'rb')
             bot.send_photo(message.chat.id, adidasSizng)
             bot.send_message(message.chat.id, 'Отправил размерую сетку Adidas, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
 
@@ -160,7 +161,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            nikeSizng = open('nike_sizing.jpeg', 'rb')
+            nikeSizng = open('img/nike_sizing.jpeg', 'rb')
             bot.send_photo(message.chat.id, nikeSizng)
             bot.send_message(message.chat.id, 'Отправил размерую сетку Nike, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
 
@@ -168,7 +169,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            jordanSizng = open('jordan_sizing.jpeg', 'rb')
+            jordanSizng = open('img/jordan_sizing.jpeg', 'rb')
             bot.send_photo(message.chat.id, jordanSizng)
             bot.send_message(message.chat.id, 'Отправил размерую сетку Jordan, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
 
@@ -176,7 +177,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            nbSizng = open('nb_sizing.jpeg', 'rb')
+            nbSizng = open('img/nb_sizing.jpeg', 'rb')
             bot.send_photo(message.chat.id, nbSizng)
             bot.send_message(message.chat.id, 'Отправил размерую сетку New Balance, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
 
@@ -184,7 +185,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('converse_sizing.png', 'rb')
+            converseSizng = open('img/converse_sizing.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Отправил размерую сетку Converse, помни, что лучше всего выбирать размер по сантиметрам!' , reply_markup=markup)
 
@@ -199,7 +200,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            feetSizng = open('feet_sizing.png', 'rb')
+            feetSizng = open('img/feet_sizing.png', 'rb')
             bot.send_photo(message.chat.id, feetSizng)
             bot.send_message(message.chat.id, 'Отправил подробный гайд как измерить стопу, пользуйся!' , reply_markup=markup)
 
@@ -229,7 +230,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('make_order.png', 'rb')
+            converseSizng = open('img/make_order.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -237,7 +238,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('recieve_order.png', 'rb')
+            converseSizng = open('img/recieve_order.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -245,7 +246,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('delivery.png', 'rb')
+            converseSizng = open('img/delivery.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -253,7 +254,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('items.png', 'rb')
+            converseSizng = open('img/items.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -261,7 +262,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('brands.png', 'rb')
+            converseSizng = open('img/brands.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -269,7 +270,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('from_where.png', 'rb')
+            converseSizng = open('img/from_where.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -277,7 +278,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('returns.png', 'rb')
+            converseSizng = open('img/returns.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -285,7 +286,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('original.png', 'rb')
+            converseSizng = open('img/original.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -293,7 +294,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('my_size.png', 'rb')
+            converseSizng = open('img/my_size.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -301,7 +302,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('diff_prices.png', 'rb')
+            converseSizng = open('img/diff_prices.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -309,7 +310,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('why_us.png', 'rb')
+            converseSizng = open('img/why_us.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
@@ -317,7 +318,7 @@ def order(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=9, one_time_keyboard=True)
             back = types.KeyboardButton('🔙Назад')
             markup.add(back)
-            converseSizng = open('china.png', 'rb')
+            converseSizng = open('img/china.png', 'rb')
             bot.send_photo(message.chat.id, converseSizng)
             bot.send_message(message.chat.id, 'Надеюсь я ответил на твой вопрос! Если же нет, жми назад и кликай "Поддержка"!' , reply_markup=markup)
 
