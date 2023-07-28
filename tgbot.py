@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
-
-bot = telebot.TeleBot('5876097484:AAEE_QLwtEuz9y3evezKatSwlZkTeGh4WjQ')
+cache_path = "/cache"
+bot = telebot.TeleBot('5876097484:AAEE_QLwtEuz9y3evezKatSwlZkTeGh4WjQ', cache_dir=cache_path)
 # bot = telebot.TeleBot(token=os.environ.get('TOKEN')) 
 
 @bot.message_handler(commands=['start'])
